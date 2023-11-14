@@ -5,6 +5,7 @@
         this._displayCalcEl = document.querySelector("#display");
         this._dateEl = document.querySelector("#data");
         this._timeEl = document.querySelector("#hora");
+        this.initButtonsEvents();
 
         this._currentDate;
         this.initialize();
@@ -19,6 +20,20 @@
         }, 1000);     /*Este mil equivale a mil milisegunos na tx de atualização automática*/
 
     }
+
+    initButtonsEvents() {
+        let buttons = document.querySelectorAll('#buttons > g, #parts > g');
+
+        buttons.forEach(btn=>{
+
+            buttons.addEventListener("click", e=> {
+
+                console.log(e);
+        });
+    });
+}
+
+
     setDisplayDateTime() {
         this.displayDate = this.currentDate.toLocaleDateString(this._locale, /*{
             day:'2-digit',
