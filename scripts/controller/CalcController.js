@@ -8,15 +8,30 @@
 
         this._currentDate;
         this.initialize();
+        this.initButtonsEvents();
     }
     initialize(){
 
         this.setDisplayDateTime();
 
-        setInterval (()=>{
+        setInterval(()=>{
 
             this.setDisplayDateTime();
         }, 1000);
+    }
+
+    initButtonsEvents(){
+        let buttons = document.querySelectorAll('#buttons > g, #parts > g');
+        
+        console.log(buttons);
+        
+        buttons.forEach((btn,index)=>{
+            btn.addEventListener('click', e=>{
+
+                console.log(btn.className.baseVal.replace('btn-',"")); /*replace = substitua*/
+    
+            });
+        })
     }
 
     setDisplayDateTime() {
